@@ -9,6 +9,7 @@ on:
         description: "Terraform action"
         required: true
         default: "apply"
+        type: choice
         options: 
           - "apply"
           - "destroy"
