@@ -32,10 +32,10 @@ jobs:
       - name: Terraform init
         run: terraform init
       - name: Terraform plan
-        run: Terraform plan
+        run: terraform plan
       - name: Terraform apply
         if: ${{ github.events.inputs.tfaction == 'apply'}}
-        run: Terraform apply --auto-approve
+        run: terraform apply --auto-approve
       - name: Terraform destroy
         if: ${{ github.events.inputs.tfaction == 'destroy'}}
         run: terraform apply --destroy --auto-approve
