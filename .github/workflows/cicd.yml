@@ -44,8 +44,10 @@ jobs:
       - name: Terraform plan
         run: Terraform plan
       - name: Terraform apply
+        if: ${{ github.events.inputs.tfaction == 'apply'}}
         run: Terraform apply --auto-approve
       - name: Terraform destroy
+        if: ${{ github.events.inputs.tfaction == 'destroy'}}
         run: terraform apply --destroy --auto-approve
     
              
